@@ -1,0 +1,18 @@
+name: Pull Request Text Generator Workflow
+
+on:
+  pull_request:
+    types: [opened, edited, reopened]
+  issue_comment:
+    types: [created]
+
+jobs:
+  generate-pr-text-on-opened-pr:
+    runs-on: ubuntu-latest
+    if: github.event_name == 'pull_request'
+    steps:
+
+      - name: Update PR description
+        uses: vblagoje/update-pr@v1
+        with:
+          pr-body: Let's merge ${{ github.event.pull_request.head.ref }} into ${{ github.event.pull_request.base.ref }}

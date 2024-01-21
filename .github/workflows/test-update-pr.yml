@@ -13,6 +13,6 @@ jobs:
     steps:
 
       - name: Update PR description
-        uses: vblagoje/update-pr@v1
+        uses: vblagoje/update-pr@add_token
         with:
           pr-body: Let's merge ${{ github.event.pull_request.head.ref }} into ${{ github.event.pull_request.base.ref }}

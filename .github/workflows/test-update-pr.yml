@@ -24,13 +24,7 @@ jobs:
 
       - name: Find PR release note
         uses: vblagoje/find-pr-release-note@main
-        id: find-pr-release-note
+        id: find-release-note-id
 
       - name: Echo PR release note
-        run: echo "I found this release note ${{ steps.find-pr-release-note.outputs.note-name }}"
-
-      - name: Echo2
-        run: echo "I found this release note ${{ steps.find-pr-release-note.outputs.note-name-hardcoded }}"
-
-      - name: Echo PR release note 2nd attempt
-        run: echo "I found this release note ${{ steps.find-pr-release-note.outputs.note-name }}"
+        run: echo "I found this release note ${{ steps.find-release-note-id.outputs.note-name }}"

@@ -1,4 +1,4 @@
-name: Pull Request Text Generator Workflow
+name: Workflow test playground
 
 on:
   pull_request:
@@ -27,4 +27,10 @@ jobs:
         id: find-pr-release-note
 
       - name: Echo PR release note
-        run: echo "I found this release note ${{ steps.find-pr-release-note.outputs.release-note }}"
+        run: echo "I found this release note ${{ steps.find-pr-release-note.outputs.note-name }}"
+
+      - name: Echo2
+        run: echo "I found this release note ${{ steps.find-pr-release-note.outputs.note-name-hardcoded }}"
+
+      - name: Echo PR release note 2nd attempt
+        run: echo "I found this release note ${{ steps.find-pr-release-note.outputs.note-name }}"

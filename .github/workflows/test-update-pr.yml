@@ -1,4 +1,4 @@
-name: Pull Request Text Generator Workflow
+name: Test Workflow
 
 on:
   pull_request:
@@ -24,6 +24,8 @@ jobs:
 
       - name: Checkout Repository
         uses: actions/checkout@v2
+        with:
+          ref: ${{ github.head_ref }}
 
       - name: Create PR release note
         uses: vblagoje/create-or-update-release-note@main

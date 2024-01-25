@@ -2,24 +2,11 @@ name: Test Workflow
 
 on:
   pull_request:
-    types: [opened, edited, reopened]
-  issue_comment:
-    types: [created]
+    types: [opened]
 
 jobs:
-  test-pr-update-on-opened-pr:
-    runs-on: ubuntu-latest
-    if: github.event_name == 'pull_request'
-    steps:
-
-      - name: Update PR description
-        uses: vblagoje/update-pr@v1
-        with:
-          pr-body: Let's merge ${{ github.event.pull_request.head.ref }} into ${{ github.event.pull_request.base.ref }}
-
   create-pr-release-note:
     runs-on: ubuntu-latest
-    if: github.event_name == 'pull_request'
     steps:
 
       - name: Checkout Repository
@@ -27,16 +14,28 @@ jobs:
         with:
           ref: ${{ github.head_ref }}
 
+      - name: Generate PR description
+        uses: vblagoje/auto-pr@main
+        id: auto-pr
+        with:
+          openai_api_key: ${{ secrets.OPENAI_API_KEY }}
+
+      - name: Update PR description
+        uses: vblagoje/update-pr@main
+        with:
+          pr-body: ${{steps.auto-pr.outputs.pr-text}}
+
+      - name: Generate Release Note for this PR
+        uses: vblagoje/auto-reno@main
+        id: auto-reno
+        with:
+          openai_api_key: ${{ secrets.OPENAI_API_KEY }}
+
       - name: Create PR release note
         uses: vblagoje/create-or-update-release-note@main
         with:
-          note-name: test-note-added-by-workflow
-          note-content: |
-            ---
-            preview:
-              - |
-                Some release note content. Testing testing.
-
+          note-name: ${{steps.auto-reno.outputs.file-name}}
+          note-content: ${{steps.auto-reno.outputs.note}}
 
   find-pr-release-note-on-opened-pr:
     runs-on: ubuntu-latest

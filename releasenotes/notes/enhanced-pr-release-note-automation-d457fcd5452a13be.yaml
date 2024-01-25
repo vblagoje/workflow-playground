@@ -1,0 +1,4 @@
+---
+enhancements:
+ - |
+   Enhanced the workflow to generate release notes automatically using an OpenAI-powered action. PR release notes are now named and generated dynamically, streamlining the release note creation process.

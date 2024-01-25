@@ -27,11 +27,17 @@ jobs:
         with:
           ref: ${{ github.head_ref }}
 
-      - name: Generate Release Notes
+      - name: Generate Release Note for this PR
         uses: vblagoje/auto-reno@main
         id: auto-reno
         with:
           openai_api_key: ${{ secrets.OPENAI_API_KEY }}
+
+      - name: Add release note to PR
+        uses: vblagoje/create-or-update-release-note@main
+        with:
+          note-name: ${{ steps.auto-reno.outputs.file_name }}
+          note-content: ${{ steps.auto-reno.outputs.note }}
 
   find-pr-release-note-on-opened-pr:
     runs-on: ubuntu-latest

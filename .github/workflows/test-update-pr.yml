@@ -27,16 +27,9 @@ jobs:
         with:
           ref: ${{ github.head_ref }}
 
-      - name: Create PR release note
-        uses: vblagoje/create-or-update-release-note@main
-        with:
-          note-name: test-note-added-by-workflow
-          note-content: |
-            ---
-            preview:
-              - |
-                Some release note content. Testing testing.
-
+      - name: Generate Release Notes
+        uses: vblagoje/auto-reno@main
+        id: auto-reno
 
   find-pr-release-note-on-opened-pr:
     runs-on: ubuntu-latest

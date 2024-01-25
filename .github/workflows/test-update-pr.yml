@@ -30,6 +30,8 @@ jobs:
       - name: Generate Release Notes
         uses: vblagoje/auto-reno@main
         id: auto-reno
+        with:
+          openai_api_key: ${{ secrets.OPENAI_API_KEY }}
 
   find-pr-release-note-on-opened-pr:
     runs-on: ubuntu-latest

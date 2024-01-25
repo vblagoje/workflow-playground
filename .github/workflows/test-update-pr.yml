@@ -33,10 +33,11 @@ jobs:
         with:
           openai_api_key: ${{ secrets.OPENAI_API_KEY }}
 
-      - name: Debug Outputs of auto-reno
-        run: |
-          echo "File Name: ${{ steps.auto-reno.outputs.file_name }}"
-          echo "Note Content: ${{ steps.auto-reno.outputs.note }}"
+      - name: Create PR release note
+        uses: vblagoje/create-or-update-release-note@main
+        with:
+          note-name: ${{steps.auto-reno.outputs.file_name}}
+          note-content: ${{steps.auto-reno.outputs.note}}
 
   find-pr-release-note-on-opened-pr:
     runs-on: ubuntu-latest

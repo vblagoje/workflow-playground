@@ -1,0 +1,4 @@
+---
+Enhancements:
+ - |
+   This update simplifies the GitHub Actions workflow for testing and updating PRs by removing a static PR update step and introducing an automated release note generation step. It leverages  for dynamic release note creation, enhancing the automation of PR handling and documentation.

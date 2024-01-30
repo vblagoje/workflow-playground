@@ -1,0 +1,4 @@
+---
+enhancements:
+ - |
+   Updated the GitHub Action workflow for pull requests to streamline the process of updating PR descriptions and generating release notes automatically using OpenAI services. These improvements focus on optimizing developer workflows by automating PR description updates and release note generation.

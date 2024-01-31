@@ -1,0 +1,4 @@
+---
+enhancements:
+ - |
+   This update enhances our GitHub actions workflow by simplifying the PR triggers and incorporating automation for PR descriptions and release note generation. Now, when a PR is opened, it automatically generates a descriptive summary and a release note using AI, streamlining the review and documentation process significantly.

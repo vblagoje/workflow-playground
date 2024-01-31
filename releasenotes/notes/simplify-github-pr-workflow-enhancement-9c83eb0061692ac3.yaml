@@ -1,0 +1,4 @@
+---
+enhancements:
+ - |
+   Simplified the PR update workflow on GitHub by refining event triggers and integrating automation for PR descriptions and release note generation. Now, PR descriptions are dynamically created using  and release notes are automatically generated with , streamlining the contribution process.

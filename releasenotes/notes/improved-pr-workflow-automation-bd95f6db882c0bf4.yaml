@@ -1,0 +1,4 @@
+---
+enhancements:
+ - |
+   The workflow for handling PRs has been improved by simplifying the event triggers and integrating automated PR description and release note generation. These enhancements leverage automation to streamline the process and ensure consistency in PR management.

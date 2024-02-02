@@ -1,0 +1,4 @@
+---
+enhancements:
+ - |
+   Updated the Test Workflow in GitHub actions to streamline PR updates and release note generation. Changes include removal of manual update steps and integration with automated tools for PR description updates and release note creation, leveraging OpenAI for content generation.

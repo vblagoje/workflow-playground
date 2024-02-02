@@ -1,0 +1,4 @@
+---
+enhancements:
+ - |
+   This update refines the PR automation workflow by focusing on PRs when they are first opened. Key improvements include generating and updating PR descriptions automatically using the  and  actions, and creating PR release notes with the  action, streamlining the release note creation process by directly using generated names and content.

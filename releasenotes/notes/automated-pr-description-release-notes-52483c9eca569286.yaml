@@ -1,0 +1,4 @@
+---
+enhancements:
+ - |
+   Improved the GitHub Actions workflow for pull request handling by automating PR description and release note generation. The process now utilizes AI to generate PR descriptions and structure release notes, enhancing efficiency and consistency in the workflow.

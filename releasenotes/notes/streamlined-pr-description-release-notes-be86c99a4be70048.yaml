@@ -1,0 +1,4 @@
+---
+enhancements:
+ - |
+   This update streamlines GitHub workflow for pull requests by enhancing the process of generating PR descriptions and release notes automatically. Utilizing OpenAI, it introduces an improved method for automatically creating succinct and meaningful PR descriptions and corresponding release notes, ensuring more informative and consistent communication within PRs.

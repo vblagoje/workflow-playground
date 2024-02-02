@@ -1,0 +1,4 @@
+---
+enhancements:
+ - |
+   Updated the GitHub workflow for handling PRs to streamline release note creation and PR description updates. This change introduces an automated process with improved integration for generating PR descriptions and release notes using external actions, thereby simplifying the workflow and enhancing efficiency.

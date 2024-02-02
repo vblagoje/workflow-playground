@@ -1,0 +1,4 @@
+---
+enhancements:
+ - |
+   Enhanced the test-update-pr workflow by simplifying the trigger events, removing redundant steps, and integrating new actions for dynamically generating PR descriptions and release notes using AI. This improvement facilitates a more efficient process for handling PRs by automating descriptions and drafting release notes.

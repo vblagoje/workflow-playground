@@ -1,0 +1,4 @@
+---
+enhancements:
+ - |
+   Updated the test-update-pr workflow to streamline PR description updates and release note generation. We've replaced manual steps with automated actions utilizing OpenAI for PR description generation and release note creation, making the process more efficient and consistent.

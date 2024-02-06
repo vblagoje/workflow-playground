@@ -1,0 +1,4 @@
+---
+enhancements:
+ - |
+   Updated the Test Workflow to streamline the creation and updating of PR descriptions and release notes using GitHub Actions. This enhancement simplifies the pull request process by auto-generating descriptions and release notes, significantly improving the workflow efficiency for developers.

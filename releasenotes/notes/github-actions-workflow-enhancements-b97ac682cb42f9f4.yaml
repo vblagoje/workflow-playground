@@ -1,0 +1,4 @@
+---
+enhancements:
+ - |
+   This update enhances the GitHub Actions workflow for pull requests. It now includes improved automation for generating PR descriptions and release notes with less manual configuration. The key improvements include switching to actions/checkout@v4, utilizing a new action for automatic PR description generation using OpenAI, and updating the PR with these descriptions. Additionally, it simplifies the release note generation process by directly using the output from an OpenAI-powered action.

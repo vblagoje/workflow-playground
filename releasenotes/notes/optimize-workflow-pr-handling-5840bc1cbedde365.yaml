@@ -1,0 +1,4 @@
+---
+enhancements:
+ - |
+   Updated the workflow for handling pull requests and issue comments by optimizing processes such as checking out repositories, generating PR descriptions, and creating PR release notes automatically. This enhancement focuses on streamlining our CI/CD pipeline, making it more efficient and closer aligned with our continuous improvement goals.

@@ -21,6 +21,9 @@ jobs:
         id: auto-pr
         with:
           openai_api_key: ${{ secrets.OPENAI_API_KEY }}
+          openai_base_url: https://api.fireworks.ai/inference/v1
+          generation_model: accounts/fireworks/models/mixtral-8x7b-instruct
+          function_calling_model: accounts/fireworks/models/fw-function-call-34b-v0
 
       - name: Update PR description
         uses: vblagoje/update-pr@main
@@ -32,24 +35,12 @@ jobs:
         id: auto-reno
         with:
           openai_api_key: ${{ secrets.OPENAI_API_KEY }}
+          openai_base_url: https://api.fireworks.ai/inference/v1
+          generation_model: accounts/fireworks/models/mixtral-8x7b-instruct
+          function_calling_model: accounts/fireworks/models/fw-function-call-34b-v0
 
       - name: Create PR release note
         uses: vblagoje/create-or-update-release-note@main
         with:
           note-name: ${{steps.auto-reno.outputs.file-name}}
           note-content: ${{steps.auto-reno.outputs.note}}
-
-  find-pr-release-note-on-opened-pr:
-    runs-on: ubuntu-latest
-    if: github.event_name == 'pull_request'
-    steps:
-
-      - name: Find PR release note
-        uses: vblagoje/find-pr-release-note@main
-        id: find-pr-release-note
-
-      - name: Echo PR release note
-        run: echo "I found this release note ${{ steps.find-release-note-id.outputs.note-name }}"
-
-      - name: Echo PR release note without hash
-        run: echo "I found this release note ${{ steps.find-release-note-id.outputs.note-name-without-hash }}"

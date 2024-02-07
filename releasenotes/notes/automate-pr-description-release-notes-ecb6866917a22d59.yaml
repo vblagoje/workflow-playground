@@ -1,0 +1,4 @@
+---
+enhancements:
+ - |
+   Enhanced the PR workflow by automating the generation and updating of PR descriptions and release notes using AI. Changes include simplifying the workflow triggers, introducing auto-generation of PR descriptions, and automating release note creation with extracted file names and content for a smoother experience in managing pull requests.

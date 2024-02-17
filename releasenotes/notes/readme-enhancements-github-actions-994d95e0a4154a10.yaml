@@ -1,0 +1,4 @@
+---
+enhancements:
+ - |
+   Enhanced the README document of the workflow-playground repository to include an introduction to the repository's purpose, focusing on testing GitHub Actions and Workflows. Additionally, detailed the current workflow, test-update-pr.yml, which updates pull request descriptions with modified files upon opening or updating a pull request.

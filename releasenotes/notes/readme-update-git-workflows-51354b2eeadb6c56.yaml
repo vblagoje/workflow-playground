@@ -1,0 +1,4 @@
+---
+enhancements:
+ - |
+   Updated README.md to include information about testing GitHub Actions and Workflows within the repository. It now outlines the purpose of the repository as a testing ground and describes the available workflow , which updates pull request descriptions with a list of modified files.

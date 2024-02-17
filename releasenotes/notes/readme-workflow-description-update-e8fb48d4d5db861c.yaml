@@ -1,0 +1,4 @@
+---
+enhancements:
+ - |
+   Improved the README with detailed information about the purpose of the repository and a description of the workflows. Specifically, the addition of the `test-update-pr.yml` workflow demonstrates automatic updating of PR descriptions with a list of modified files upon PR opening or updating.

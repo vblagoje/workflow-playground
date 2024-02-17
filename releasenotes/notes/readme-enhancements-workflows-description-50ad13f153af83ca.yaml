@@ -1,0 +1,4 @@
+---
+enhancements:
+ - |
+   Enhanced the README.md with a detailed description of the repository's purpose, emphasizing its role as a playground for testing GitHub Actions and Workflows. Additionally, introduced a section that lists and explains the workflows present within the repository, currently highlighting the `test-update-pr.yml` workflow.

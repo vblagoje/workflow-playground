@@ -1,0 +1,4 @@
+---
+enhancements:
+ - |
+   Introduced an update to the README.md to include a description of a new workflow () which is triggered on pull request creation or update, for the purpose of updating the PR description with a modified files list. This aims to enhance the clarity and management of changes in the workflow-playground repository.

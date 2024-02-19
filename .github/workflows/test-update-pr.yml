@@ -20,6 +20,9 @@ jobs:
         uses: vblagoje/auto-pr@main
         id: auto-pr
         with:
+          openai_base_url: https://api.fireworks.ai/inference/v1
+          generation_model: accounts/fireworks/models/mixtral-8x7b-instruct
+          function_calling_model: accounts/fireworks/models/fw-function-call-34b-v0
           openai_api_key: ${{ secrets.OPENAI_API_KEY }}
 
       - name: Update PR description
@@ -31,6 +34,9 @@ jobs:
         uses: vblagoje/auto-reno@main
         id: auto-reno
         with:
+          openai_base_url: https://api.fireworks.ai/inference/v1
+          generation_model: accounts/fireworks/models/mixtral-8x7b-instruct
+          function_calling_model: accounts/fireworks/models/fw-function-call-34b-v0
           openai_api_key: ${{ secrets.OPENAI_API_KEY }}
 
       - name: Create PR release note

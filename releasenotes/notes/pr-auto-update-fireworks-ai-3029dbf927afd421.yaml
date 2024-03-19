@@ -1,0 +1,4 @@
+---
+features:
+ - |
+   Introduce PR-Auto, a new action to generate PR descriptions, and update PR release notes using Fireworks AI models.

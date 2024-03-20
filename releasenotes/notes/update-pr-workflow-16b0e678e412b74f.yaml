@@ -1,0 +1,4 @@
+---
+enhancements:
+ - |
+   Update PR workflow to use new PR auto generation and release note generation modules

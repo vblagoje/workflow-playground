@@ -1,0 +1,4 @@
+---
+features:
+ - |
+   Update the PR workflow to use vblagoje/pr-auto@v1, vblagoje/update-pr@v1, and vblagoje/reno-auto@v1 for generating PR descriptions, updating them, and creating release notes. Also, update the openai API keys and models.

@@ -1,0 +1,4 @@
+---
+features:
+ - |
+   Introduce updated PR workflow with new action for generating PR descriptions and release notes.

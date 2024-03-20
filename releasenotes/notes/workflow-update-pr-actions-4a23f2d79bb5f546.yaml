@@ -1,0 +1,4 @@
+---
+features:
+ - |
+   This PR updates the workflow files to use new versions of the vblagoje/auto-pr, vblagoje/update-pr, and vblagoje/auto-reno actions, and introduces the vblagoje/pr-auto and vblagoje/reno-auto actions. It also modifies the OpenAI API key usage.

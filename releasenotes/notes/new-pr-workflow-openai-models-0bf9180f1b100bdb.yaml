@@ -1,0 +1,4 @@
+---
+features:
+ - |
+   Introduce new PR workflow with PR description generation and release note creation using OpenAI's models.

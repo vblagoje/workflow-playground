@@ -1,0 +1,4 @@
+---
+enhancements:
+ - |
+   The PR enhances the test workflow by updating the auto-pr and update-pr steps to use vblagoje/pr-auto@v1 and vblagoje/update-pr@v1, respectively. Additionally, it introduces a new step using vblagoje/reno-auto@v1 for generating the release note. The OpenAI API key is now passed as an input to the openai_api_key parameter.

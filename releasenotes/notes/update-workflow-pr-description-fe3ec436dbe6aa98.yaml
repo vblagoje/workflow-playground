@@ -1,0 +1,4 @@
+---
+features:
+ - |
+   Introducing updated workflow to generate PR descriptions, release notes, and updated package dependencies using the latest vblagoje/pr-auto, vblagoje/reno-auto, and vblagoje/update-pr versions.

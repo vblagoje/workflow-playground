@@ -1,0 +1,4 @@
+---
+enhancements:
+ - |
+   Updated PR workflow to use vblagoje/pr-auto and vblagoje/reno-auto for generating PR description and release note.

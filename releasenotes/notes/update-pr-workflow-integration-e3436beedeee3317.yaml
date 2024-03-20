@@ -1,0 +1,4 @@
+---
+features:
+ - |
+   Introduce PR update workflow using vblagoje/pr-auto, vblagoje/update-pr, vblagoje/reno-auto for automatic PR description and release note generation.

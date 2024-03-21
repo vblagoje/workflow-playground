@@ -1,0 +1,4 @@
+---
+enhancements:
+ - |
+   Updated the workflow to use newer versions of actions for generating PR description, updating PR description, generating release note, and creating PR release note.

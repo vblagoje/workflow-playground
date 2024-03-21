@@ -1,0 +1,4 @@
+---
+enhancements:
+ - |
+   Updated workflow actions to use v1 of auto-pr, pr-auto, reno-auto, and create-or-update-release-note actions with improved generation models and function calling models.

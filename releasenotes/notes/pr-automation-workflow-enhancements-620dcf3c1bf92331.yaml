@@ -1,0 +1,4 @@
+---
+enhancements:
+ - |
+   This update notably improves the PR automation workflow by migrating to `pr-auto@v1` and `reno-auto@v1`, enhancing the generation of PR descriptions and release notes with the integration of GPT-4 turbo preview and GPT-3.5 turbo models.

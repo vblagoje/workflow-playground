@@ -1,0 +1,4 @@
+---
+features:
+ - |
+   Updated the GitHub Actions workflow to use newer versions of workflow automation actions for generating PR description, updating PR description, generating release note, and creating PR release note.

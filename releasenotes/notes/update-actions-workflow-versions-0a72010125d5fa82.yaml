@@ -1,0 +1,4 @@
+---
+enhancements:
+ - |
+   Updated GitHub Actions workflow to use new versions of auto-pr, pr-auto, reno-auto, and create-or-update-release-note actions.

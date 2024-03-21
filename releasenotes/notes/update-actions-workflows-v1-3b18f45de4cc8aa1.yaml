@@ -1,0 +1,4 @@
+---
+enhancements:
+ - |
+   Updated GitHub Actions workflows to use v1 of auto-pr, pr-auto, reno-auto, and create-or-update-release-note actions with GPT-3.5-turbo models.

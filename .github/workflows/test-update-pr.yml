@@ -17,39 +17,28 @@ jobs:
           repository: ${{github.event.pull_request.head.repo.full_name}}
 
       - name: Generate PR description
-        uses: vblagoje/auto-pr@main
-        id: auto-pr
+        uses: vblagoje/pr-auto@v1
+        id: pr-auto-id
         with:
+          generation_model: gpt-3.5-turbo
+          function_calling_model: gpt-3.5-turbo
           openai_api_key: ${{ secrets.OPENAI_API_KEY }}
 
       - name: Update PR description
-        uses: vblagoje/update-pr@main
+        uses: vblagoje/update-pr@v1
         with:
-          pr-body: ${{steps.auto-pr.outputs.pr-text}}
+          pr-body: ${{steps.pr-auto-id.outputs.pr-text}}
 
       - name: Generate Release Note for this PR
-        uses: vblagoje/auto-reno@main
-        id: auto-reno
+        uses: vblagoje/reno-auto@v1
+        id: reno-auto-id
         with:
+          generation_model: gpt-3.5-turbo
+          function_calling_model: gpt-3.5-turbo
           openai_api_key: ${{ secrets.OPENAI_API_KEY }}
 
       - name: Create PR release note
-        uses: vblagoje/create-or-update-release-note@main
+        uses: vblagoje/create-or-update-release-note@v1
         with:
-          note-name: ${{steps.auto-reno.outputs.file-name}}
-          note-content: ${{steps.auto-reno.outputs.note}}
-
-  find-pr-release-note-on-opened-pr:
-    runs-on: ubuntu-latest
-    if: github.event_name == 'pull_request'
-    steps:
-
-      - name: Find PR release note
-        uses: vblagoje/find-pr-release-note@main
-        id: find-pr-release-note
-
-      - name: Echo PR release note
-        run: echo "I found this release note ${{ steps.find-release-note-id.outputs.note-name }}"
-
-      - name: Echo PR release note without hash
-        run: echo "I found this release note ${{ steps.find-release-note-id.outputs.note-name-without-hash }}"
+          note-name: ${{steps.reno-auto-id.outputs.file-name}}
+          note-content: ${{steps.reno-auto-id.outputs.note}}

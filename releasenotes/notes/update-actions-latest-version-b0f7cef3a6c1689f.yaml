@@ -1,0 +1,4 @@
+---
+enhancements:
+ - |
+   Updated actions to use the latest version for generating PR descriptions, updating PR descriptions, generating release notes, and creating or updating release notes.

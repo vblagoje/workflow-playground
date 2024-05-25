@@ -1,0 +1,4 @@
+---
+features:
+ - |
+   Introduced a new GitHub Action to extract a random user from commit logs who is mentioned in a predefined list, enhancing automation in workflows.

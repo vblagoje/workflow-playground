@@ -1,0 +1,4 @@
+---
+features:
+ - |
+   Introduced a new GitHub action to extract a random committer from commit logs, alongside a flexible workflow that triggers on pull request opening, capable of creating issues based on the action's output. This addition enhances automation capabilities for GitHub repositories by automating committer selection and issue creation based on workflow results.

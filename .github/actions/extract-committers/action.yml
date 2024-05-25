@@ -1,0 +1,15 @@
+name: Extract Random User from Commit Logs
+description: Extracts a random user from commit logs who is also in the predefined list.
+inputs:
+  project_dir:
+    description: 'Project directory to scan for committers'
+    required: true
+  names_handles:
+    description: 'Mapping of names to GitHub handles in JSON format'
+    required: true
+outputs:
+  user:
+    description: 'The randomly selected user handle'
+runs:
+  using: 'node16'
+  main: 'index.js'

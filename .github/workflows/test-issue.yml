@@ -1,0 +1,25 @@
+name: Test Workflow
+
+on:
+  pull_request:
+    types: [opened]
+
+jobs:
+  find-committers:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          ref: ${{github.event.pull_request.head.ref}}
+          repository: ${{github.event.pull_request.head.repo.full_name}}
+
+      - name: Extract random committer
+        uses: ./.github/actions/extract-committers
+        id: random_user
+        with:
+            project_dir: ${{github.workspace}}
+            names_handles: '{{"Vladimir Blagojevic": "vblagoje"}}'
+

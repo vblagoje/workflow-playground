@@ -17,22 +17,13 @@ jobs:
           fetch-depth: 0
           ref: ${{github.event.pull_request.head.ref}}
           repository: ${{github.event.pull_request.head.repo.full_name}}
-      - name: Set up Node.js
-        uses: actions/setup-node@v4
-        with:
-            node-version: '20'
-
-      - name: Install Dependencies
-        run: |
-            cd ./.github/actions/extract-committers
-            npm install
-
       - name: Extract random committer
         uses: ./.github/actions/extract-committers
         id: random_user
         with:
             project_dir: ${{github.workspace}}
             names_handles: '{"Vladimir Blagojevic": "vblagoje"}'
+            default_user: 'vblagoje'
       - name: Display extracted user
         run: echo ${{ steps.random_user.outputs.user }}
 

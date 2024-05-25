@@ -7,9 +7,16 @@ inputs:
   names_handles:
     description: 'Mapping of names to GitHub handles in JSON format'
     required: true
-outputs:
-  user:
-    description: 'The randomly selected user handle'
+  default_user:
+    description: 'Default GitHub user to assign if extraction fails'
+    required: true
 runs:
-  using: 'node20'
-  main: 'index.js'
+  using: 'composite'
+  steps:
+    - name: Set up Python
+      uses: actions/setup-python@v5
+      with:
+        python-version: '3.10'
+    - name: Run the script
+      run: python .github/actions/extract-committers/main.py
+      shell: bash

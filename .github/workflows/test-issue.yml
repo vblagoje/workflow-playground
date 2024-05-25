@@ -7,6 +7,8 @@ on:
 jobs:
   find-committers:
     runs-on: ubuntu-latest
+    outputs:
+      committer: ${{ steps.random_user.outputs.user }}
 
     steps:
       - name: Checkout Repository
@@ -44,7 +46,7 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
           title: |
             [${{ github.workflow }}] failed during [${{ github.event_name }}]
-          assignees: ${{ needs.find-committers.outputs.random_user.outputs.user }}, # don't remove the comma
+          assignees: ${{ needs.find-committers.outputs.committer }}
           body: |
             ## Failure Report:
             

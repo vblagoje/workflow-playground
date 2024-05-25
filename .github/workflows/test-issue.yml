@@ -1,0 +1,53 @@
+name: Test Workflow
+
+on:
+  pull_request:
+    types: [opened]
+
+jobs:
+  find-committers:
+    runs-on: ubuntu-latest
+    outputs:
+      committer: ${{ steps.random_user.outputs.user }}
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          ref: ${{github.event.pull_request.head.ref}}
+          repository: ${{github.event.pull_request.head.repo.full_name}}
+      - name: Extract random committer
+        uses: ./.github/actions/extract-committers
+        id: random_user
+        with:
+            project_dir: ${{github.workspace}}
+            names_handles: '{"Madeesh Kannan":"shadeMe","Massimiliano Pippi":"masci","Stefano Fiorucci":"anakin87","Vladimir Blagojevic":"vblagoje", "Silvano Cerza": "silvanocerza", "Julian Risch": "julian-risch", "David S. Batista": "davidsbatista"}'
+            default_user: 'shadeMe'
+      - name: Display extracted user
+        run: echo ${{ steps.random_user.outputs.user }}
+
+      - name: Debug outputs
+        run: cat $GITHUB_OUTPUT
+  create-issue-if-nightly-job-fails:
+    needs: find-committers
+    runs-on: ubuntu-latest
+    steps:
+      - name: Create Issue
+        uses: dacbd/create-issue-action@main
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          title: |
+            Nightly [${{ github.workflow }}] failed
+          assignees: ${{ needs.find-committers.outputs.committer }}
+          body: |
+            ## Failure Report:
+            
+            > [!IMPORTANT]
+            > Details on failed run: https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}
+            
+            - Branch: `${{ github.ref }}`
+            - Commit: ${{ github.sha }}
+            - Workflow Path: `${{ github.workflow_ref }}`
+            
+            - [ ] **Task**: Review failed CI run, fix the issue(s), and re-run until successful.

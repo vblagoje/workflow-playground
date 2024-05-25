@@ -1,0 +1,4 @@
+---
+features:
+ - |
+   Introduced a new GitHub Action for extracting a random committer from commit logs based on a predefined list of GitHub handles. This action adds a unique capability to dynamically select a user for task assignment or notifications based on the project's commit history.

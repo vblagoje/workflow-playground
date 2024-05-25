@@ -1,0 +1,4 @@
+---
+features:
+ - |
+   Introduced a new GitHub Action to randomly select a user from the commit logs based on a predefined list of GitHub handles. This enhancement streamlines the process of identifying contributors for specific actions or rewards in collaborative projects.

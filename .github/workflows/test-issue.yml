@@ -34,3 +34,35 @@ jobs:
       - name: Display extracted user
         run: echo ${{ steps.random_user.outputs.user }}
 
+  create-issue-if-nightly-job-fails:
+    needs: find-committers
+    runs-on: ubuntu-latest
+    if: always() && needs.find-committers.result == 'failure'
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Create Issue
+        uses: dacbd/create-issue-action@main
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          title: |
+            [${{ github.workflow }}] failed during [${{ github.event_name }}]
+          assignees: ${{ steps.random_user.outputs.user }}
+          body: |
+            ## Failure Report:
+            
+            > [!IMPORTANT]
+            > Details on failed run: https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}
+            
+            - Author: @${{ github.actor }}
+            - Branch: `${{ github.ref }}`
+            - Commit: ${{ github.sha }}
+            - Workflow Path: `${{ github.workflow_ref }}`
+            
+            - [ ] **Task**: Review failed run, fix the issue(s), and re-run until successful.
+            
+            > This issue was created automatically by GitHub, 
+            > through `dacbd/create-issue-action` action.
+            > **DO NOT** close this issue until resolved.      
+

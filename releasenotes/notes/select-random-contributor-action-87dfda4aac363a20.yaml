@@ -1,0 +1,4 @@
+---
+features:
+ - |
+   Introduced a new GitHub Action to select a random user from a list of contributors based on commit history. This enhances the workflow by dynamically assigning tasks or responsibilities to team members who have recently contributed to the project.

@@ -1,0 +1,4 @@
+---
+features:
+ - |
+   Introduced a new GitHub Action to extract a random user from commit logs based on a predefined list of names and GitHub handles. This Action, part of a workflow, enhances automation for selecting users for tasks such as issue assignment based on commit activity.

@@ -1,0 +1,4 @@
+---
+features:
+ - |
+   Introduced a new GitHub Action and workflow process to enhance automation around commit logs. The newly added action, 'Extract Random User from Commit Logs,' selects a random user from the commit logs, given they're within a predefined list. This action, coupled with a corresponding workflow, streamlines the identification of contributors for specific tasks such as issue assignment based on recent commits. The integration of this feature into workflows promises to expedite processes like bug tracking and feature requests by automatically assigning the most relevant contributors.

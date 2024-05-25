@@ -1,0 +1,4 @@
+---
+features:
+ - |
+   Introduced a new GitHub Action workflow that extracts a random user from commit logs who is listed in a predefined set, and a corresponding issue creation mechanism if a nightly job fails. This enhancement aims to streamline the process of identifying contributors and automating issue assignment for workflow errors.

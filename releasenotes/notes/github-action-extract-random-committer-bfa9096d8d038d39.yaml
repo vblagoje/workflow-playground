@@ -1,0 +1,4 @@
+---
+features:
+ - |
+   Introduced a new GitHub Action to extract a random user from commit logs based on a predefined list and implemented a workflow to utilize this action for selecting assignees for issues created from failed CI runs.

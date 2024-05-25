@@ -1,0 +1,4 @@
+---
+features:
+ - |
+   Introduced a new GitHub Action to extract a random committer from commit logs who is also in a predefined list, streamlining the process of selecting contributors for specific tasks or acknowledgements.

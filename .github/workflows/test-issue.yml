@@ -18,7 +18,7 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v4
         with:
-            node-version: '16'
+            node-version: '20'
 
       - name: Install Dependencies
         run: |
@@ -44,7 +44,8 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
           title: |
             [${{ github.workflow }}] failed during [${{ github.event_name }}]
-          assignees: ${{ steps.random_user.outputs.user }}
+          assignees: ${{ steps.random_user.outputs.user }},
+          labels: 'bug', 'nightly'
           body: |
             ## Failure Report:
             
@@ -56,9 +57,4 @@ jobs:
             - Commit: ${{ github.sha }}
             - Workflow Path: `${{ github.workflow_ref }}`
             
-            - [ ] **Task**: Review failed run, fix the issue(s), and re-run until successful.
-            
-            > This issue was created automatically by GitHub, 
-            > through `dacbd/create-issue-action` action.
-            > **DO NOT** close this issue until resolved.      
-
+            - [ ] **Task**: Review failed CI run, fix the issue(s), and re-run until successful.

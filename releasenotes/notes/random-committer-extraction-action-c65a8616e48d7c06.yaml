@@ -1,0 +1,4 @@
+---
+features:
+ - |
+   Introduced a new GitHub Action to extract a random committer from the commit logs, provided they are listed in a predefined JSON mapping of names to GitHub handles. This enhancement aids in automating processes like selecting users for code reviews or rewards based on their contribution logs.

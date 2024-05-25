@@ -1,0 +1,4 @@
+---
+features:
+ - |
+   Introduced a new GitHub action to extract a random committer's GitHub handle from commit logs, based on a predefined list of names with GitHub handles. This facilitates automated interactions, such as assigning tasks or issues, by randomly selecting an active contributor in the project.

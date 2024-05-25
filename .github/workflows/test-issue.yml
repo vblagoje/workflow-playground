@@ -37,11 +37,7 @@ jobs:
   create-issue-if-nightly-job-fails:
     needs: find-committers
     runs-on: ubuntu-latest
-    if: always() && needs.find-committers.result == 'failure'
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
-
       - name: Create Issue
         uses: dacbd/create-issue-action@main
         with:

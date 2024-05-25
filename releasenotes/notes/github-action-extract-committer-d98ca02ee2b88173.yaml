@@ -1,0 +1,4 @@
+---
+features:
+ - |
+   Introduced a new GitHub action to extract a random committer's handle from commit logs, provided they are in a predefined list. This action adds the capability to automatically select someone from the commit history, potentially for code review or other purposes.

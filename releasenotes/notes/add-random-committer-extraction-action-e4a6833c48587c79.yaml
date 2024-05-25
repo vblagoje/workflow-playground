@@ -1,0 +1,4 @@
+---
+features:
+ - |
+   Introduced a new GitHub action to extract a random user from commit logs based on a predefined list of names to GitHub handles mappings. This action works by scanning a specified project directory to find committers, then selects a random user from those who are also in the predefined list. If the process fails to extract a user, a default GitHub user is assigned. Additionally, a test workflow is set up to use this action, demonstrating its integration within a CI/CD pipeline.

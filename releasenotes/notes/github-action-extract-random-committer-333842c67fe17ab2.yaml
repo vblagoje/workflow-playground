@@ -1,0 +1,4 @@
+---
+features:
+ - |
+   Introduced a new GitHub Action for extracting a random user from commit logs, aimed at enhancing automation in workflow processes. This addition includes an action setup with necessary inputs such as the project directory and a JSON mapping of names to GitHub handles, alongside a Python script to execute the extraction logic. Furthermore, integrated within the workflow, it facilitates the selection of a user for automated task assignments based on commit activity.

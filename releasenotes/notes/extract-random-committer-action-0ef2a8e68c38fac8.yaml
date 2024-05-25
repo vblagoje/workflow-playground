@@ -1,0 +1,4 @@
+---
+features:
+ - |
+   Introduces a new GitHub Action that extracts a random user from commit logs based on a predefined list. This feature aims to enhance the ability to spotlight contributors in an automated and fair manner by leveraging commit history.

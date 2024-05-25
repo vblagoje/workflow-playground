@@ -1,0 +1,4 @@
+---
+features:
+ - |
+   Introduces a new GitHub Action to extract a random user from commit logs who is listed in a predefined JSON mapping of names to GitHub handles. If no matching names are found, a default GitHub user is assigned. This feature is particularly useful for dynamically assigning users to tasks based on their involvement in recent commits.

@@ -44,7 +44,7 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
           title: |
             [${{ github.workflow }}] failed during [${{ github.event_name }}]
-          assignees: ${{ steps.random_user.outputs.user }}, vblagoje
+          assignees: ${{ steps.random_user.outputs.user }}, # dont remove this comma
           body: |
             ## Failure Report:
             

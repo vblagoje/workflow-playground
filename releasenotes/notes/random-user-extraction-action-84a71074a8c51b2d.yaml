@@ -1,0 +1,4 @@
+---
+features:
+ - |
+   Introduced a new GitHub Action to extract a random user from commit logs who is already listed in a predefined JSON mapping. This feature enhances automated workflows by enabling targeted notifications or actions involving contributors.

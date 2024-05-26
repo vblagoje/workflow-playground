@@ -2,7 +2,6 @@ import os
 import json
 import subprocess
 import random
-import uuid
 
 def get_committers(project_dir: str) -> set:
     try:

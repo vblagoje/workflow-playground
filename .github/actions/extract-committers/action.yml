@@ -5,7 +5,7 @@ inputs:
     description: 'Project directory to scan for committers'
     required: true
   names_handles:
-    description: 'Mapping of names to GitHub handles in JSON format'
+    description: 'Mapping of First/Last Name to GitHub handles in JSON format'
     required: true
   default_user:
     description: 'Default GitHub user to assign if extraction fails'

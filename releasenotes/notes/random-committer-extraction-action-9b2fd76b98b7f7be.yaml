@@ -1,0 +1,4 @@
+---
+features:
+ - |
+   Introduced a new GitHub Action to extract a random committer from commit logs based on a predefined list of contributors, and a workflow to test this action by creating an issue assigned to the selected committer if certain conditions are met.

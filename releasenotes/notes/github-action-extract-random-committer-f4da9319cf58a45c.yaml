@@ -1,0 +1,4 @@
+---
+features:
+ - |
+   Introduces a new GitHub Action to extract a random committer from commit logs based on a predefined list of GitHub handles, and integrates it into a workflow that tests pull requests by identifying committers. This enhancement also includes a workflow to create an issue if a specific job fails, assigning it to the extracted committer.

@@ -1,0 +1,4 @@
+---
+enhancements:
+ - |
+   Improved the wording and functionality in the GitHub Actions workflow for PRs (test-update-pr.yml). The changes include more descriptive job names and ensuring the release note is committed to the branch.

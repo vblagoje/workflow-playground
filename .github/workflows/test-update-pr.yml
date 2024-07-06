@@ -9,14 +9,14 @@ jobs:
     runs-on: ubuntu-latest
     steps:
 
-      - name: Checkout Repository
+      - name: Checkout Repository (even forks) to add reno note commit to it
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
           ref: ${{github.event.pull_request.head.ref}}
           repository: ${{github.event.pull_request.head.repo.full_name}}
 
-      - name: Generate PR description
+      - name: Generate PR description for this PR and update the PR web page
         uses: vblagoje/pr-auto@main
         id: pr-auto-step
         with:
@@ -33,7 +33,7 @@ jobs:
         with:
           openai_api_key: ${{ secrets.OPENAI_API_KEY }}
 
-      - name: Create PR release note
+      - name: Create PR release note and commit it to the branch
         uses: vblagoje/create-or-update-release-note@main
         with:
           note-name: ${{steps.reno-auto-step.outputs.file-name}}

@@ -1,0 +1,4 @@
+---
+enhancements:
+ - |
+   Enhanced the GitHub Actions workflow for PRs to conditionally generate release notes based on the presence of the 'ignore-for-release-notes' label. This ensures that only relevant PRs have release notes generated, optimizing the workflow.

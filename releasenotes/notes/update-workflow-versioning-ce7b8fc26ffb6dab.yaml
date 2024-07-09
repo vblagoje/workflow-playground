@@ -1,0 +1,4 @@
+---
+enhancements:
+ - |
+   Updated GitHub Actions workflow for better versioning by changing actions usage from @main to specific versions (@v1) to ensure more stable and predictable builds.

@@ -26,13 +26,7 @@ jobs:
     runs-on: ubuntu-latest
     needs: set-reno-condition
     steps:
-      - name: Checkout Repository (even forks) to add reno note commit to it
-        uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
-          ref: ${{github.event.pull_request.head.ref}}
-          repository: ${{github.event.pull_request.head.repo.full_name}}
-
+      # intentionally doing this step first to speed up PR text generation and improve UX
       - name: Generate PR description for this PR and update the PR web page
         uses: vblagoje/pr-auto@v1
         id: pr-auto-step
@@ -43,6 +37,14 @@ jobs:
         uses: vblagoje/update-pr@v1
         with:
           pr-body: ${{steps.pr-auto-step.outputs.pr-text}}
+
+      # now checkout the repo to add the release note commit to it (if needed)
+      - name: Checkout Repository (even forks) to add reno note commit to it
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          ref: ${{github.event.pull_request.head.ref}}
+          repository: ${{github.event.pull_request.head.repo.full_name}}
 
       - name: Generate Release Note for this PR
         uses: vblagoje/reno-auto@v1

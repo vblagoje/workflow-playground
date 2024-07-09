@@ -1,0 +1,4 @@
+---
+enhancements:
+ - |
+   Optimized the GitHub Actions workflow by reordering the steps to speed up PR description generation and improve user experience.

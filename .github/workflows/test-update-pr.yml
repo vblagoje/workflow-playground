@@ -54,7 +54,7 @@ jobs:
           openai_api_key: ${{ secrets.OPENAI_API_KEY }}
 
       - name: Create PR release note and commit it to the branch
-        uses: vblagoje/create-or-update-release-note@v1
+        uses: vblagoje/create-or-update-release-note@v2
         if: needs.set-reno-condition.outputs.generate-release-note == 'true'
         with:
           note-name: ${{steps.reno-auto-step.outputs.file-name}}

@@ -65,5 +65,5 @@ jobs:
             ```
             ${{steps.reno-auto-step.outputs.note}}
             ```
-            4. Review the release note text, adjust if needed, and save the file
-            5. Add this file to your commit and push it to the branch
+            4. Review the release note text, adjust if needed, and save the file.
+            5. Add this file to your commit and push it to the branch.

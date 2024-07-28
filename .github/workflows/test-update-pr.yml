@@ -40,14 +40,14 @@ jobs:
     runs-on: ubuntu-latest
     needs: set-reno-condition
     steps:
-      - name: Generate Release Note for this PR
+      - name: Generate release note for this PR
         uses: vblagoje/reno-auto@v1
         if: needs.set-reno-condition.outputs.generate-release-note == 'true'
         id: reno-auto-step
         with:
           openai_api_key: ${{ secrets.OPENAI_API_KEY }}
 
-      - name: Create PR comment
+      - name: Create PR comment with release note instructions
         uses: peter-evans/create-or-update-comment@v4
         if: needs.set-reno-condition.outputs.generate-release-note == 'true'
         with:

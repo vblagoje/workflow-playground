@@ -53,9 +53,16 @@ jobs:
         with:
           openai_api_key: ${{ secrets.OPENAI_API_KEY }}
 
-      - name: Create PR release note and commit it to the branch
-        uses: vblagoje/create-or-update-release-note@v2
+      - name: Create PR comment
+        uses: peter-evans/create-or-update-comment@v4
         if: needs.set-reno-condition.outputs.generate-release-note == 'true'
         with:
-          note-name: ${{steps.reno-auto-step.outputs.file-name}}
-          note-content: ${{steps.reno-auto-step.outputs.note}}
+          issue-number: ${{github.event.pull_request.number}}
+          body: |
+            We use reno release notes to describe the code changes. Here is what you need to do:
+            1. Install reno via `pip install reno` (of course only once per venv)
+            2. Issue this command in your terminal from the project root `reno new ${{steps.reno-auto-step.outputs.file-name}}`
+            3. Paste this release note below in that file:
+            ${{steps.reno-auto-step.outputs.note}}
+            4. Verify the release note text, adjust it if needed and save this file
+            5. Commit changes and push to the branch

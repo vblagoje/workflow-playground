@@ -1,0 +1,4 @@
+---
+enhancements:
+ - |
+   Updated the GitHub Actions workflow to create PR comments instead of directly committing release notes. This change instructs users on how to generate release notes manually using the reno tool and ensures they review and commit the notes themselves.

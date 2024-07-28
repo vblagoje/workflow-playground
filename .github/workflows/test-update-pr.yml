@@ -53,10 +53,13 @@ jobs:
         with:
           issue-number: ${{github.event.pull_request.number}}
           body: |
-            We use reno release notes to describe the code changes. Here is what you need to do:
+            We use reno release notes to describe the code changes in this PR. Here is what you need to do:
             1. Install reno via `pip install reno` (of course only once per venv)
-            2. Issue this command in your terminal from the project root `reno new ${{steps.reno-auto-step.outputs.file-name}}`
-            3. Paste this release note below in that file:
+            2. Issue this command in your terminal from the project root: `reno new ${{steps.reno-auto-step.outputs.file-name}}`
+            3. This command will generate a new release note file in the `releasenotes/notes` directory.
+            Paste this release note below in that file:
+            ```
             ${{steps.reno-auto-step.outputs.note}}
-            4. Verify the release note text, adjust it if needed and save this file
-            5. Commit changes and push to the branch
+            ```
+            4. Verify the release note text, adjust it if needed, and save this file
+            5. Add this file to the commit and push to the branch

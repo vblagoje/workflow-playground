@@ -13,6 +13,8 @@ jobs:
       id: pr-auto-step
       with:
         openai_api_key: ${{ secrets.OPENAI_API_KEY }}
+        system_prompt: https://bit.ly/pr_auto
+        function_calling_model: gpt-4o
 
     - name: Update PR description
       uses: vblagoje/update-pr@v1

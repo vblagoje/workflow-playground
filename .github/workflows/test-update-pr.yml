@@ -9,7 +9,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: Generate PR description for this PR and update the PR web page
-      uses: vblagoje/pr-auto@v1
+      uses: vblagoje/pr-auto@main
       id: pr-auto-step
       with:
         openai_api_key: ${{ secrets.OPENAI_API_KEY }}
@@ -44,7 +44,7 @@ jobs:
     needs: set-reno-condition
     steps:
       - name: Generate Release Note for this PR
-        uses: vblagoje/reno-auto@v1
+        uses: vblagoje/reno-auto@main
         if: needs.set-reno-condition.outputs.generate-release-note == 'true'
         id: reno-auto-step
         with:
